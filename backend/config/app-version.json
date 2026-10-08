@@ -1,0 +1,16 @@
+{
+  "latestVersion": "1.0.21",
+  "latestVersionCode": 22,
+  "minimumSupportedVersion": "1.0.0",
+  "forceUpdate": false,
+  "downloadUrl": "/apk/KisanVision-Release.apk",
+  "releaseDate": "2026-10-03",
+  "title": "Kisan Vision v1.0.21 Available",
+  "message": "Precision Analysis Location Change Fix & Farm Machinery Expansion",
+  "releaseNotes": [
+    "Fixed Location Change button in Crop Recommendation & Precision Analysis",
+    "Enabled instantaneous smart search and manual location switching",
+    "Enhanced touch responsiveness and satellite weather lock",
+    "Expanded equipment booking with 32 verified agricultural implements"
+  ]
+}

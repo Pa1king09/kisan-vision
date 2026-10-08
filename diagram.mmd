@@ -1,0 +1,43 @@
+graph TD
+    classDef client fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:white;
+    classDef backend fill:#10b981,stroke:#047857,stroke-width:2px,color:white;
+    classDef ml fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:white;
+    classDef db fill:#6366f1,stroke:#4338ca,stroke-width:2px,color:white;
+
+    subgraph Presentation_Layer
+        UI["User Browser"]
+        React["React Frontend"]
+    end
+
+    subgraph Application_Layer
+        Node["Node.js / Express Backend"]
+        Auth["Auth & JWT"]
+        AgroModules["Agronomic Modules"]
+    end
+
+    subgraph ML_Data_Layer
+        Flask["Flask ML Microservice"]
+        XGB["XGBoost Model"]
+        SHAP["SHAP Explainer"]
+        Mapper["Soil Input Mapper"]
+        Mongo[("MongoDB")]
+    end
+
+    UI -->|"User Inputs"| React
+    React -->|"HTTP POST"| Node
+    Node --> Auth
+    Node --> AgroModules
+    Node -->|"Save History"| Mongo
+    Node -->|"/predict"| Flask
+    Flask --> Mapper
+    Mapper --> XGB
+    XGB --> SHAP
+    SHAP -->|"Crop + SHAP Values"| Flask
+    Flask -->|"Returns JSON"| Node
+    Node -->|"Final Response"| React
+    React -->|"Renders Dashboard"| UI
+
+    class UI,React client;
+    class Node,Auth,AgroModules backend;
+    class Flask,XGB,SHAP,Mapper ml;
+    class Mongo db;

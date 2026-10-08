@@ -1,0 +1,16 @@
+# Ignore heavy Android project and Gradle build caches
+android/
+android
+
+# Ignore local dependencies
+node_modules/
+node_modules
+
+# Ignore system & git
+.git/
+.gitignore
+.vscode/
+scripts/
+
+# Ignore duplicate raw APKs in root public if any
+public/KisanVision-Release.apk

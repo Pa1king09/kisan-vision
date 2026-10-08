@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Kisan Vision</string>
+    <string name="title_activity_main">Kisan Vision</string>
+    <string name="package_name">com.kisanvision.app</string>
+    <string name="custom_url_scheme">com.kisanvision.app</string>
+</resources>

@@ -1,0 +1,23 @@
+{
+  "headers": [
+    {
+      "source": "/download/(.*).apk",
+      "headers": [
+        { "key": "Content-Type", "value": "application/vnd.android.package-archive" },
+        { "key": "Content-Disposition", "value": "attachment; filename=\"KisanVision.apk\"" }
+      ]
+    },
+    {
+      "source": "/(.*).apk",
+      "headers": [
+        { "key": "Content-Type", "value": "application/vnd.android.package-archive" },
+        { "key": "Content-Disposition", "value": "attachment; filename=\"KisanVision.apk\"" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/download/KisanVision.apk", "destination": "/download/KisanVision.apk" },
+    { "source": "/KisanVision-Release.apk", "destination": "/KisanVision-Release.apk" },
+    { "source": "/((?!download/.*\\.apk|.*\\.apk|assets/|crops/|images/|.*\\..*).*)", "destination": "/index.html" }
+  ]
+}

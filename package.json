@@ -1,0 +1,15 @@
+{
+  "name": "kisanvision",
+  "version": "1.0.0",
+  "description": "KisanVision — Explainable AI Precision Agriculture Platform",
+  "scripts": {
+    "start": "concurrently \"npm run start-ml\" \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-ml": "cd ml_model && .\\venv\\Scripts\\python.exe app.py",
+    "start-backend": "cd backend && node server.js",
+    "start-frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
